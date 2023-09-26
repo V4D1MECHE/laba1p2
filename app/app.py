@@ -3,12 +3,14 @@ import PyQt6 as Qt
 import design
 from PyQt6.QtWidgets import QMessageBox
 from PyQt6.QtCore import QCoreApplication
+from PyQt6.QtGui import QDoubleValidator
 from math import cos, sin, tan, pi
 
 class App(design.Ui_Form, Qt.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.boxA.setValidator(QDoubleValidator())
         self.buttonResult.clicked.connect(self.resultHandler)
         self.buttonClear.clicked.connect(self.clearHandler)
         self.buttonClose.clicked.connect(self.closeHandler)
